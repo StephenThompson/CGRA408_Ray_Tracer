@@ -1,0 +1,83 @@
+Film  800 450 comp308_a3_scene.png
+LookAt 0.07 0.1 0.17      0 0.02 0      0 1 0 
+Camera 90
+Threads 32
+SurfaceIntegrator 3
+
+
+WorldBegin
+
+# Light sources
+AttributeBegin
+	Translate 0 1.2 .2
+	LightSource point .7 .7 .7
+	
+	Translate .6 -.5 -.7
+	LightSource point .4 0 0
+	
+	Translate -1.8 0 0
+	LightSource point 0 .5 0
+
+AttributeEnd
+
+#############
+# Table
+##############
+AttributeBegin
+Translate 0 -0.05 0
+#        type   emitance   diffuse      specular  roughness  reflective   refractive  ior
+Material phong  0 0 0      0.7 0.3 0.1  .7 .5 .5  60         0 0 0        0 0 0       0
+Shape box .3 0.1 .3
+AttributeEnd
+
+#################
+# Shapes on table
+#################
+
+#------------
+# Bunny
+AttributeBegin
+#        type   emitance   diffuse       specular  roughness  reflective          refractive  ior
+Material phong  0 0 0     .15 .17 0.2    .7 .7 .7  60         .45 .47 0.5         1 1 1       1.08
+#Material phong  0 0 0     .5 .5 .7    .8 .8 .8  100        -1 -1 -1     -1 -1 -1       0
+Translate 0.02 0 0
+Shape model models/bunny.obj
+AttributeEnd
+
+#------------
+# Teapot
+AttributeBegin
+#        type   emitance   diffuse    specular  roughness  reflective   refractive  ior
+Material phong  0 0 0     .5 .5 .7    .8 .8 .8  100        .5 .5 .7     0 0 0       0
+Translate .08 0 -.08
+Shape model models/teapot.obj
+AttributeEnd
+
+#------------
+# Sphere
+AttributeBegin
+#        type   emitance   diffuse    specular  roughness  reflective   refractive  ior
+Material phong  0 0 0     .6 .5 .1    .8 .8 .8  50         .6 .5 .1        0 0 0       0
+Translate .08 .025 .08
+Shape sphere .025
+AttributeEnd
+
+#------------
+# Box
+AttributeBegin
+#        type   emitance   diffuse    specular  roughness  reflective   refractive  ior
+Material phong  0 0 0     .7 .3 .1    .6 .6 .6  60         0 0 0        0 0 0       0
+Translate -.08 .03 -.08
+Shape box .06 .06 .06
+AttributeEnd
+
+#------------
+# Torus
+AttributeBegin
+#        type   emitance   diffuse    specular      roughness  reflective   refractive  ior
+Material phong  0 0 0      0.7 0 0    0.7 0.1 0.1   25         0 0 0        0 0 0       0
+Translate -.08 0.01 .08
+Shape model models/torus.obj
+AttributeEnd
+
+WorldEnd

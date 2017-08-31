@@ -1,0 +1,42 @@
+Film 800 450 shapes_spheres.png
+LookAt 0 0.2 0.8   0 0 0   0 1 0 
+Camera 60
+Threads 32
+SurfaceIntegrator 4
+
+
+WorldBegin
+
+AttributeBegin
+	Translate .2 .8 .12
+	LightSource point 1 1 1
+
+	Translate .8 0 -.16
+	LightSource point 1 0 0
+
+	Translate -2.0 0 0
+	LightSource point 0 1 0
+AttributeEnd
+
+
+AttributeBegin
+	Material plastic .1 1 .8     .03 .05 .05    2
+	Shape trianglemesh
+		6   0 2 1    0 3 2
+		4  -1.6 -.1 0.25   -1.6 -.1 -.25   1.6 -.1 -.25   1.6 -.1 0.25
+AttributeEnd
+
+AttributeBegin
+	Material plastic .8 .5 .4    .7 .7 .7      21
+	Shape sphere  .1
+
+	Material mirror .7 0.4 0.3
+	Translate .3 0 0
+	Shape sphere  .1
+
+	Material glass 0 0 0  0.5 0.6 0.9   1.03
+	Translate -.6 0 0
+	Shape sphere  .1
+AttributeEnd
+
+WorldEnd
